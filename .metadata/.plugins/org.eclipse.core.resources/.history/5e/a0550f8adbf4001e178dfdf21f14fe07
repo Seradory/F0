@@ -1,0 +1,29 @@
+/*
+ * veri.h
+ *
+ *  Created on: Apr 3, 2024
+ *      Author: alise
+ */
+
+#ifndef SRC_VERI_H_
+#define SRC_VERI_H_
+
+
+
+#include "stdio.h"
+#include "string.h"
+
+
+typedef struct
+{
+	uint32_t V_deger = {50,50,50,50,50,50,50,50,50,50}; // Alfa vektörü her bir zero-crossed interruptinden ne kadar süre sonra pulse çıkacağının bilgisi ms
+	uint32_t M_deger={50,50,50,50,50,50,50,50,50,50}; //M vektörü. Her bir Açık ve zamanı için kaç ms arayla pwm generate edeceğinin vektörü
+	uint16_t V_Acis_Zaman={4,4,4,4,4,4,4,4,4,4}; // açık süre vektörü Kaç sn açık olduğu vektörü
+	uint16_t V_Kapanis_Zaman={5,5,5,5,5,5,5,5,5,5}; // açık süre sonrası yeni açık süreye geçmek için kaç sn kapalı bekleyeceği vektörü
+	uint8_t Aktif_Kapali={0x01,0x01,0x01,0x01,0x01,0x01,0x01,0x01,0x01,0x01}; // ilgili indeksteki değerleri uygulayıp uygulamaya karar veren değer vektörü
+
+}Set_Deger;
+
+Set_Deger Veri_Matrisi[10];
+
+#endif /* SRC_VERI_H_ */

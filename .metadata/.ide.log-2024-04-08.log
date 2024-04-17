@@ -1,0 +1,89 @@
+2024-04-08 09:32:35,063 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,522x321,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:32:36,055 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:32:49,589 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:32:56,202 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:33:16,334 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:33:59,851 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,522x321,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:34:01,735 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:34:40,265 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,522x278,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:34:44,548 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 674544608 Bytes (796917760)
+2024-04-08 09:34:45,213 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 303567776 Bytes (796917760)
+2024-04-08 09:34:46,036 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 391125920 Bytes (796917760)
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM6_7F0
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F0
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F0
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F0
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-04-08 09:34:46,136 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-04-08 09:34:46,137 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-04-08 09:34:46,198 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\license.tmp_save
+2024-04-08 09:34:46,272 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\license.tmp
+2024-04-08 09:34:46,293 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\gpio.tmp_save
+2024-04-08 09:34:46,361 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\gpio.tmp
+2024-04-08 09:34:46,455 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_it.c_save
+2024-04-08 09:34:46,576 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_it.c
+2024-04-08 09:34:46,588 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_it.h_save
+2024-04-08 09:34:46,666 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_it.h
+2024-04-08 09:34:46,695 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_hal_msp.c_save
+2024-04-08 09:34:46,845 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_hal_msp.c
+2024-04-08 09:34:46,857 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\system.tmp_save
+2024-04-08 09:34:46,908 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\system.tmp
+2024-04-08 09:34:46,923 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_hal_conf.h_save
+2024-04-08 09:34:47,003 [INFO] CodeEngine:335 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_hal_conf.h
+2024-04-08 09:34:47,017 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-04-08 09:34:47,017 [WARN] CodeGenerator:3951 - IP not found : null
+2024-04-08 09:34:47,029 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\main.h_save
+2024-04-08 09:34:47,100 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\main.h
+2024-04-08 09:34:47,109 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\main.c_save
+2024-04-08 09:34:47,217 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\main.c
+2024-04-08 09:34:47,493 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 86mS.
+2024-04-08 09:34:47,496 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-04-08 09:34:47,545 [INFO] ConfigFileManager:1503 - The Die is : DIE440
+2024-04-08 09:34:48,078 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 582mS.
+2024-04-08 09:34:48,079 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-04-08 09:34:48,082 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-04-08 09:39:10,477 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,522x278,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:39:12,538 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-08 09:39:15,522 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 358765616 Bytes (796917760)
+2024-04-08 09:39:16,406 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 385502256 Bytes (796917760)
+2024-04-08 09:39:17,268 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 452088880 Bytes (796917760)
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM6_7F0
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F0
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F0
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F0
+2024-04-08 09:39:17,414 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-04-08 09:39:17,415 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-04-08 09:39:17,415 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-04-08 09:39:17,416 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-04-08 09:39:17,519 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\license.tmp_save
+2024-04-08 09:39:17,579 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\license.tmp
+2024-04-08 09:39:17,593 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\gpio.tmp_save
+2024-04-08 09:39:17,645 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\gpio.tmp
+2024-04-08 09:39:17,723 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_it.c_save
+2024-04-08 09:39:17,795 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_it.c
+2024-04-08 09:39:17,799 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_it.h_save
+2024-04-08 09:39:17,848 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_it.h
+2024-04-08 09:39:17,863 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_hal_msp.c_save
+2024-04-08 09:39:17,945 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\stm32f0xx_hal_msp.c
+2024-04-08 09:39:17,951 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\system.tmp_save
+2024-04-08 09:39:17,991 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\MXTmpFiles\system.tmp
+2024-04-08 09:39:18,002 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_hal_conf.h_save
+2024-04-08 09:39:18,068 [INFO] CodeEngine:335 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\stm32f0xx_hal_conf.h
+2024-04-08 09:39:18,079 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-04-08 09:39:18,079 [WARN] CodeGenerator:3951 - IP not found : null
+2024-04-08 09:39:18,090 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\main.h_save
+2024-04-08 09:39:18,138 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Inc\main.h
+2024-04-08 09:39:18,147 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\main.c_save
+2024-04-08 09:39:18,241 [INFO] CodeEngine:279 - Generated code: C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\Core\Src\main.c
+2024-04-08 09:39:18,513 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 129mS.
+2024-04-08 09:39:18,516 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-04-08 09:39:18,585 [INFO] ConfigFileManager:1503 - The Die is : DIE440
+2024-04-08 09:39:19,152 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 635mS.
+2024-04-08 09:39:19,153 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-04-08 09:39:19,155 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-04-08 09:43:16,770 [INFO] Gpio:277 - dependency for GPIO [RCC, SYS, TIM3, USART2]

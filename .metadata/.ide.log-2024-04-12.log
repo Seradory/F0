@@ -1,0 +1,27 @@
+2024-04-17 05:56:21,147 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
+2024-04-17 05:56:22,115 [INFO] MainUpdater:2873 - connection check result : 10
+2024-04-17 05:56:22,122 [INFO] MainUpdater:2873 - connection check result : 10
+2024-04-17 05:56:22,317 [INFO] MicroXplorer:468 - Change Database Path : 
+2024-04-17 05:56:22,318 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.110
+2024-04-17 05:56:22,336 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2024-04-17 05:56:22,336 [INFO] ThirdParty:873 - entering critical section [close project]
+2024-04-17 05:56:22,340 [INFO] ThirdParty:883 - exiting critical section [close project]
+2024-04-17 05:56:22,344 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2024-04-17 05:56:22,357 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 131654648 Bytes (413138944)
+2024-04-17 05:56:22,360 [INFO] MicroXplorer:468 - Change Database Path : 
+2024-04-17 05:56:22,360 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.110
+2024-04-17 05:56:22,360 [INFO] OpenFileManager:312 - Change cursor
+2024-04-17 05:56:22,398 [WARN] IntegrityCheckThread:84 - waiting for thirdparty lock release [integrity check]
+2024-04-17 05:56:22,398 [INFO] IntegrityCheckThread:86 - entering critical section [integrity check]
+2024-04-17 05:56:22,601 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SMBUS.2.1.0
+2024-04-17 05:56:22,621 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.23.1
+2024-04-17 05:56:22,639 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.23.0
+2024-04-17 05:56:22,656 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.23.2
+2024-04-17 05:56:22,920 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F7.1.1.0
+2024-04-17 05:56:22,978 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-MOTENV1.4.3.2
+2024-04-17 05:56:23,003 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-FLIGHT1.5.0.2
+2024-04-17 05:56:23,038 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.3.0.0
+2024-04-17 05:56:23,075 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.7.0.0
+2024-04-17 05:56:23,098 [WARN] PackLoader:240 - Cannot read IP mode file for emotas.I-CUBE-CANOPEN.1.3.0
+2024-04-17 05:56:23,152 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.3.1.0
+2024-04-17 05:56:23,187 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-SMARTAG2.1.2.0

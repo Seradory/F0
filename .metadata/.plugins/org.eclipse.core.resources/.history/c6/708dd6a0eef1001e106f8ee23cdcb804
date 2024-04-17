@@ -1,0 +1,32 @@
+/*
+ * veri.h
+ *
+ *  Created on: Apr 3, 2024
+ *      Author: alise
+ */
+
+#ifndef SRC_VERI_H_
+#define SRC_VERI_H_
+
+
+
+#include "stdio.h"
+#include "string.h"
+
+
+
+
+
+typedef struct
+{
+	uint32_T V_deger;
+	uint32_T M_deger;
+	uint16_t V_Acis_Zaman;
+	uint16_t V_Kapanis_Zaman;
+	uint8_t Aktif_Kapali;
+
+}Set_Deger;
+
+Set_Deger Veri_Matrisi[10];
+
+#endif /* SRC_VERI_H_ */

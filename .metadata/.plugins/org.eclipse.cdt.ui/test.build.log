@@ -1,0 +1,10 @@
+22:27:30 **** Incremental Build of configuration Debug for project test ****
+make -j16 all 
+arm-none-eabi-size  test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4848	     12	   1572	   6432	   1920	test.elf
+Finished building: default.size.stdout
+ 
+
+22:27:30 Build Finished. 0 errors, 0 warnings. (took 203ms)
+
