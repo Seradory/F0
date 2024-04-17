@@ -210,9 +210,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	//Buraya bir flag ekle. Eğer uarttan start senario gelmişse zerocross sonrası sonrası von off timerlerini başlatacak. Her von voff süresi sonrasında aktif m ve alfa değerlerini değiştirecek.
-	//Eğer uarttan start flagi gelmediyse burası önemli olmayacak.
-	//Eğer start flah 0 daysa timerler durdurulacak aktif indeks 0 olacak. (pause durumu eklenebilir.)
     if(GPIO_Pin == GPIO_PIN_1)
     {
     	EXTI->PR=EXTI_PR_PR1;
