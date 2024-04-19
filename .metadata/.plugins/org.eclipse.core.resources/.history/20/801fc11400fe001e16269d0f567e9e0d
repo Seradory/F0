@@ -108,6 +108,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  {
 			  HAL_TIM_Base_Start_IT(&htim6);
 
+			  //htim6.Instance->DIER=0;
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
 			  HAL_UART_Receive_IT(&huart2,rx_Buffer,50); //50 1700 olacak.
@@ -115,9 +116,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  if(Mesaj_id==0x000000F5)
 		  {
 
+			  //htim6.Instance->DIER=0;
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2); //doğru mesaj boylarını gir.
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2);
 		  }
 
 	  }
@@ -224,7 +226,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
     	EXTI->PR=EXTI_PR_PR1;
     	start_int_timer(&htim2, Veri_Matrisi[Aktif_Indeks].V_deger*100);
-        // PC burda alfa counterini aktif et ve o kadar süre bekle. sonra alfa pininden pulse ver.
+        // PC burda alfa counterini aktif et ve o kadar süre bekle. sonra alfa counterinden pulse ver.
 
     }
 }

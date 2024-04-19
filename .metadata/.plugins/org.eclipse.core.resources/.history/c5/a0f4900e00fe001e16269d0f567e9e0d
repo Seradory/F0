@@ -108,6 +108,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  {
 			  HAL_TIM_Base_Start_IT(&htim6);
 
+			  //htim6.Instance->DIER=0;
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
 			  HAL_UART_Receive_IT(&huart2,rx_Buffer,50); //50 1700 olacak.
@@ -115,9 +116,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  if(Mesaj_id==0x000000F5)
 		  {
 
+			  //htim6.Instance->DIER=0;
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2); //doğru mesaj boylarını gir.
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2);
 		  }
 
 	  }
@@ -184,21 +186,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     	if(on_or_off_time==1)	//açık süre sonrası giriyor
     	{
         	///diğer timerleri m timer kapat
-    		disable_triac_int();
     		stop_pwm_m();
     		on_or_off_time=0;
     		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Kapanis_Zaman*1000);
 
-
     	}
     	else				//kapali süre sonrası giriyor
     	{
-    		Aktif_Indeks++;
-    		on_or_off_time=1;
-    		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman*1000);
+    		//diğer timerlara m değerlerini verip başlat
     		start_pwm_m(Veri_Matrisi[Aktif_Indeks].M_deger*100, Veri_Matrisi[Aktif_Indeks].M_deger*100/2);
-    		enable_triac_int();
-
+    		/////
+    		on_or_off_time=1;
+    		Aktif_Indeks++;
+    		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman*1000);
     	}
 
     }
@@ -220,11 +220,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+	//Buraya bir flag ekle. Eğer uarttan start senario gelmişse zerocross sonrası sonrası von off timerlerini başlatacak. Her von voff süresi sonrasında aktif m ve alfa değerlerini değiştirecek.
+	//Eğer uarttan start flagi gelmediyse burası önemli olmayacak.
+	//Eğer start flah 0 daysa timerler durdurulacak aktif indeks 0 olacak. (pause durumu eklenebilir.)
     if(GPIO_Pin == GPIO_PIN_1)
     {
     	EXTI->PR=EXTI_PR_PR1;
     	start_int_timer(&htim2, Veri_Matrisi[Aktif_Indeks].V_deger*100);
-        // PC burda alfa counterini aktif et ve o kadar süre bekle. sonra alfa pininden pulse ver.
+        // PC burda alfa counterini aktif et ve o kadar süre bekle. sonra alfa counterinden pulse ver.
 
     }
 }

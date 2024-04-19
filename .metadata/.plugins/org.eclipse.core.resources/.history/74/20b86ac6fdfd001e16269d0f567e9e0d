@@ -51,13 +51,4 @@ extern TIM_HandleTypeDef htim14;
 	 timer->Instance->CR1=1;
 
  }
-
- void enable_triac_int()
- {
-	 HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
- };
- void disable_triac_int()
- {
-	 HAL_NVIC_DisableIRQ(EXTI0_1_IRQn);
- };
 #endif /* SRC_PWM_H_ */

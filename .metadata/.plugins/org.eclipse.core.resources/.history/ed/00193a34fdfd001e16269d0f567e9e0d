@@ -15,7 +15,7 @@ extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim14;
 
 
- void start_pwm_m(uint32_t frequency, uint32_t duty_cycle)
+ void m_vurus_gonder(uint32_t frequency, uint32_t duty_cycle)
  {
      // PWM frekansı ve duty cycle ayarları
 	  htim3.Instance->ARR = HAL_RCC_GetPCLK1Freq() / frequency - 1;
@@ -51,13 +51,4 @@ extern TIM_HandleTypeDef htim14;
 	 timer->Instance->CR1=1;
 
  }
-
- void enable_triac_int()
- {
-	 HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
- };
- void disable_triac_int()
- {
-	 HAL_NVIC_DisableIRQ(EXTI0_1_IRQn);
- };
 #endif /* SRC_PWM_H_ */

@@ -58,6 +58,6 @@ extern TIM_HandleTypeDef htim14;
  };
  void disable_triac_int()
  {
-	 HAL_NVIC_DisableIRQ(EXTI0_1_IRQn);
+
  };
 #endif /* SRC_PWM_H_ */

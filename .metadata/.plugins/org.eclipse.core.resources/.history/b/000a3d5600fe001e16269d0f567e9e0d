@@ -101,13 +101,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			  HeaderOrData=0x01;
 			  HAL_UART_Transmit(huart, Versiyon_Cevap, 8, 5000);
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,8);
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,8); //doğru mesaj boylarını gir.
 
 		  }
 		  if(Mesaj_id==0x000000F3)
 		  {
 			  HAL_TIM_Base_Start_IT(&htim6);
 
+			  //htim6.Instance->DIER=0;
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
 			  HAL_UART_Receive_IT(&huart2,rx_Buffer,50); //50 1700 olacak.
@@ -115,9 +116,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  if(Mesaj_id==0x000000F5)
 		  {
 
+			  //htim6.Instance->DIER=0;
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2); //doğru mesaj boylarını gir.
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2);
 		  }
 
 	  }
