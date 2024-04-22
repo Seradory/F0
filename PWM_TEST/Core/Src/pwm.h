@@ -15,11 +15,12 @@ extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim14;
 
 
- void start_pwm_m(uint32_t frequency, uint32_t duty_cycle)
+ void start_pwm_m(uint32_t tick_25us)
  {
      // PWM frekansı ve duty cycle ayarları
-	  htim3.Instance->ARR = HAL_RCC_GetPCLK1Freq() / frequency - 1;
-	  htim3.Instance->CCR1 = (duty_cycle * (htim3.Instance->ARR + 1)) / 100;
+	  htim3.Instance->ARR = tick_25us - 1;
+	  htim3.Instance->CCR2=2;
+	  //sConfigOC.Pulse = tick/2;
 
      // PWM başlatma
      HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
@@ -49,6 +50,15 @@ extern TIM_HandleTypeDef htim14;
 	 timer->Instance->ARR=count;
 	 timer->Instance->DIER=1;
 	 timer->Instance->CR1=1;
+
+ }
+
+ void stop_int_timer(TIM_HandleTypeDef *timer)
+ {
+	 timer->Instance->CR1=0;
+	 timer->Instance->SR=0;
+	 timer->Instance->CNT=1;
+	 timer->Instance->DIER=1;
 
  }
 

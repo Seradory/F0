@@ -68,6 +68,9 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+///timer 2 triac driver 25us 1 tick
+///timer 3 pwm driver 25us 1 tick
+///timer 14 on/off driver 1 ms 1 tick
 __attribute__((section(".myCustomSection"))) int test_data[512];
 
 
@@ -80,6 +83,8 @@ uint8_t Versiyon_Cevap[]= {0x00,0x00,0x00,0xf2,0x01,0x00,0xff,0xff};
 uint8_t OK_NOK_Cevap[]= {0x00,0x00,0x00,0xf4,0x00,0x00,0x00,0x01};
 
 uint8_t on_or_off_time=0x01;
+
+uint32_t zero_cross_dedect=0;
 ////////MATRİS VERİLERİ
 
 
@@ -95,37 +100,47 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  Mesaj_id=rx_Buffer[0]<<24 | rx_Buffer[1]<<16 | rx_Buffer[2]<<8 | rx_Buffer[3];
 		  Mesaj_boyu=rx_Buffer[4]<<24 | rx_Buffer[5]<<16 | rx_Buffer[6]<<8 | rx_Buffer[7];
 
-		  if(Mesaj_id==0x000000F1)
+		  if(Mesaj_id==0xF1000000)
 		  {
-
-			  HeaderOrData=0x01;
-			  HAL_UART_Transmit(huart, Versiyon_Cevap, 8, 5000);
-			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,8);
-
-		  }
-		  if(Mesaj_id==0x000000F3)
-		  {
-			  HAL_TIM_Base_Start_IT(&htim6);
-
+			  //HAL_TIM_Base_Start_IT(&htim6);
+			  start_int_timer(&htim6,2000);
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,50); //50 1700 olacak.
-		  }
-		  if(Mesaj_id==0x000000F5)
-		  {
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,1);
 
+		  }
+		  if(Mesaj_id==0xF3000000)
+		  {
+			  //HAL_TIM_Base_Start_IT(&htim6);
+			  start_int_timer(&htim6,2000);
 			  HeaderOrData=0x00;
 			  memset(rx_Buffer,0,sizeof(rx_Buffer));
-			  HAL_UART_Receive_IT(&huart2,rx_Buffer,2); //doğru mesaj boylarını gir.
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,1701); //50 1700 olacak.
+		  }
+		  if(Mesaj_id==0xF5000000)
+		  {
+			 // HAL_TIM_Base_Start_IT(&htim6);
+			  start_int_timer(&htim6,2000);
+			  HeaderOrData=0x00;
+			  memset(rx_Buffer,0,sizeof(rx_Buffer));
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,102); //doğru mesaj boylarını gir.
 		  }
 
 	  }
 	  else //data
 	  {
-		  if(Mesaj_id==0x000000F3)
+		  if(Mesaj_id==0xF1000000)
 		  {
-		    	HAL_TIM_Base_Stop_IT(&htim6);
+			  HAL_TIM_Base_Stop_IT(&htim6);
+			  HeaderOrData=0x01;
+			  memset(rx_Buffer,0,sizeof(rx_Buffer));
+			  HAL_UART_Receive_IT(&huart2,rx_Buffer,8); // tekrardan header bekliyor
+			  HAL_UART_Transmit(huart, Versiyon_Cevap, 8, 5000);
+		  }
+
+		  if(Mesaj_id==0xF3000000)
+		  {
+		      HAL_TIM_Base_Stop_IT(&htim6);
 			  HeaderOrData=0x01;
 			  //burda data atama işlemleri yapılacak
 			  ///
@@ -136,10 +151,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			  HAL_UART_Transmit(huart, OK_NOK_Cevap, 8, 5000);
 		  }
 
-		  if(Mesaj_id==0x000000F5)
+		  if(Mesaj_id==0xF5000000)
 		  {
 
 			  HAL_TIM_Base_Stop_IT(&htim6);
+
 			  HeaderOrData=0x01;
 			  //burda data atama işlemleri yapılacak
 			  ///
@@ -149,8 +165,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			  HAL_UART_Transmit(huart, OK_NOK_Cevap, 8, 5000);
 			  if(rx_Buffer[0]!=0xff) // senaryo başlat ff gelirse durdur ve sistemi 0la. diğer türlü başlat.
 			  {
-				  start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman*1000);
+				  start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman);
 				  enable_triac_int();
+				  start_pwm_m(Veri_Matrisi[Aktif_Indeks].M_deger);
 				  on_or_off_time=1; //Von da başlayacak.
 			  }
 			  else
@@ -175,6 +192,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     	HAL_UART_DeInit(&huart2);
     	MX_USART2_UART_Init();
     	memset(rx_Buffer,0,sizeof(rx_Buffer));
+    	uint8_t* error_message="\r\nComm Error";
+    	HAL_UART_Transmit(&huart2, error_message, 12, 5000);
     	HAL_UART_Receive_IT(&huart2,rx_Buffer,8);
 
     }
@@ -187,7 +206,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     		disable_triac_int();
     		stop_pwm_m();
     		on_or_off_time=0;
-    		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Kapanis_Zaman*1000);
+    		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Kapanis_Zaman);
 
 
     	}
@@ -195,8 +214,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     	{
     		Aktif_Indeks++;
     		on_or_off_time=1;
-    		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman*1000);
-    		start_pwm_m(Veri_Matrisi[Aktif_Indeks].M_deger*100, Veri_Matrisi[Aktif_Indeks].M_deger*100/2);
+    		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman);
+    		start_pwm_m(Veri_Matrisi[Aktif_Indeks].M_deger);
     		enable_triac_int();
 
     	}
@@ -207,7 +226,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
     	HAL_TIM_Base_Stop_IT(&htim2);
     	HAL_GPIO_WritePin(triac_output_GPIO_Port, triac_output_Pin, GPIO_PIN_SET);
-    	for(int i=0;i<5;i++)
+    	for(int i=0;i<5000;i++)
     	{
 
     	}
@@ -222,8 +241,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if(GPIO_Pin == GPIO_PIN_1)
     {
+    	zero_cross_dedect++;
     	EXTI->PR=EXTI_PR_PR1;
-    	start_int_timer(&htim2, Veri_Matrisi[Aktif_Indeks].V_deger*100);
+    	start_int_timer(&htim2, Veri_Matrisi[Aktif_Indeks].V_deger);
         // PC burda alfa counterini aktif et ve o kadar süre bekle. sonra alfa pininden pulse ver.
 
     }
@@ -239,66 +259,69 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	///timer 2 triac driver 25us 1 tick
+	///timer 3 pwm driver 25us 1 tick
+	///timer 14 on/off driver 1 ms 1 tick
 	memset(rx_Buffer,0,sizeof(rx_Buffer));
 	////BRUAYI UARTTA KONFIG MESAJI İLE AYARLAYACAKSIN.
-	Veri_Matrisi[0].V_Acis_Zaman=10;
-	Veri_Matrisi[0].V_Kapanis_Zaman=2;
-	Veri_Matrisi[0].M_deger=50;
-	Veri_Matrisi[0].V_deger=50;
+	Veri_Matrisi[0].V_Acis_Zaman=15000;
+	Veri_Matrisi[0].V_Kapanis_Zaman=5;
+	Veri_Matrisi[0].M_deger=1000;
+	Veri_Matrisi[0].V_deger=200;
 	Veri_Matrisi[0].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[1].V_Acis_Zaman=10;
-	Veri_Matrisi[1].V_Kapanis_Zaman=2;
-	Veri_Matrisi[1].M_deger=50;
-	Veri_Matrisi[1].V_deger=50;
+	Veri_Matrisi[1].V_Acis_Zaman=15000;
+	Veri_Matrisi[1].V_Kapanis_Zaman=5;
+	Veri_Matrisi[1].M_deger=500;
+	Veri_Matrisi[1].V_deger=200;
 	Veri_Matrisi[1].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[2].V_Acis_Zaman=10;
-	Veri_Matrisi[2].V_Kapanis_Zaman=2;
-	Veri_Matrisi[2].M_deger=50;
-	Veri_Matrisi[2].V_deger=50;
+	Veri_Matrisi[2].V_Acis_Zaman=15000;
+	Veri_Matrisi[2].V_Kapanis_Zaman=5;
+	Veri_Matrisi[2].M_deger=250;
+	Veri_Matrisi[2].V_deger=200;
 	Veri_Matrisi[2].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[3].V_Acis_Zaman=10;
-	Veri_Matrisi[3].V_Kapanis_Zaman=2;
-	Veri_Matrisi[3].M_deger=50;
-	Veri_Matrisi[3].V_deger=50;
+	Veri_Matrisi[3].V_Acis_Zaman=15000;
+	Veri_Matrisi[3].V_Kapanis_Zaman=5;
+	Veri_Matrisi[3].M_deger=125;
+	Veri_Matrisi[3].V_deger=200;
 	Veri_Matrisi[3].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[4].V_Acis_Zaman=10;
-	Veri_Matrisi[4].V_Kapanis_Zaman=2;
-	Veri_Matrisi[4].M_deger=50;
-	Veri_Matrisi[4].V_deger=50;
+	Veri_Matrisi[4].V_Acis_Zaman=15000;
+	Veri_Matrisi[4].V_Kapanis_Zaman=5;
+	Veri_Matrisi[4].M_deger=100;
+	Veri_Matrisi[4].V_deger=200;
 	Veri_Matrisi[4].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[5].V_Acis_Zaman=10;
-	Veri_Matrisi[5].V_Kapanis_Zaman=2;
-	Veri_Matrisi[5].M_deger=50;
-	Veri_Matrisi[5].V_deger=50;
+	Veri_Matrisi[5].V_Acis_Zaman=15000;
+	Veri_Matrisi[5].V_Kapanis_Zaman=5;
+	Veri_Matrisi[5].M_deger=75;
+	Veri_Matrisi[5].V_deger=200;
 	Veri_Matrisi[5].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[6].V_Acis_Zaman=10;
-	Veri_Matrisi[6].V_Kapanis_Zaman=2;
-	Veri_Matrisi[6].M_deger=50;
-	Veri_Matrisi[6].V_deger=50;
+	Veri_Matrisi[6].V_Acis_Zaman=15000;
+	Veri_Matrisi[6].V_Kapanis_Zaman=5;
+	Veri_Matrisi[6].M_deger=20;
+	Veri_Matrisi[6].V_deger=200;
 	Veri_Matrisi[6].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[7].V_Acis_Zaman=10;
-	Veri_Matrisi[7].V_Kapanis_Zaman=2;
-	Veri_Matrisi[7].M_deger=50;
-	Veri_Matrisi[7].V_deger=50;
+	Veri_Matrisi[7].V_Acis_Zaman=15000;
+	Veri_Matrisi[7].V_Kapanis_Zaman=5;
+	Veri_Matrisi[7].M_deger=10;
+	Veri_Matrisi[7].V_deger=200;
 	Veri_Matrisi[7].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[8].V_Acis_Zaman=10;
-	Veri_Matrisi[8].V_Kapanis_Zaman=2;
-	Veri_Matrisi[8].M_deger=50;
-	Veri_Matrisi[8].V_deger=50;
+	Veri_Matrisi[8].V_Acis_Zaman=15000;
+	Veri_Matrisi[8].V_Kapanis_Zaman=5;
+	Veri_Matrisi[8].M_deger=8;
+	Veri_Matrisi[8].V_deger=200;
 	Veri_Matrisi[8].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[9].V_Acis_Zaman=10;
-	Veri_Matrisi[9].V_Kapanis_Zaman=2;
-	Veri_Matrisi[9].M_deger=50;
-	Veri_Matrisi[9].V_deger=50;
+	Veri_Matrisi[9].V_Acis_Zaman=15000;
+	Veri_Matrisi[9].V_Kapanis_Zaman=5;
+	Veri_Matrisi[9].M_deger=4;
+	Veri_Matrisi[9].V_deger=200;
 	Veri_Matrisi[9].Aktif_Kapali=0x01;
 	////
 
@@ -342,6 +365,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  if(Aktif_Indeks==10)
+	  {
+		  Aktif_Indeks=0;
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -403,9 +430,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 47;
+  htim2.Init.Prescaler = 1199;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 2500;
+  htim2.Init.Period = 360;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -465,9 +492,9 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 47;
+  htim3.Init.Prescaler = 1199;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 2500;
+  htim3.Init.Period = 100;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -490,7 +517,7 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1250;
+  sConfigOC.Pulse = 38;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
@@ -522,7 +549,7 @@ static void MX_TIM6_Init(void)
 
   /* USER CODE END TIM6_Init 1 */
   htim6.Instance = TIM6;
-  htim6.Init.Prescaler = 47;
+  htim6.Init.Prescaler = 47999;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim6.Init.Period = 5000;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -537,7 +564,7 @@ static void MX_TIM6_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM6_Init 2 */
-
+  stop_int_timer(&htim6);
   /* USER CODE END TIM6_Init 2 */
 
 }
@@ -562,7 +589,7 @@ static void MX_TIM14_Init(void)
   htim14.Instance = TIM14;
   htim14.Init.Prescaler = 47999;
   htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim14.Init.Period = 5000;
+  htim14.Init.Period = 4000;
   htim14.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim14.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim14) != HAL_OK)
