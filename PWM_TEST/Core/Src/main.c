@@ -192,8 +192,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     	HAL_UART_DeInit(&huart2);
     	MX_USART2_UART_Init();
     	memset(rx_Buffer,0,sizeof(rx_Buffer));
-    	uint8_t* error_message="\r\nComm Error";
-    	HAL_UART_Transmit(&huart2, error_message, 12, 5000);
+    	//uint8_t* error_message="\r\nComm Error";
+    	//HAL_UART_Transmit(&huart2, error_message, 12, 5000);
     	HAL_UART_Receive_IT(&huart2,rx_Buffer,8);
 
     }
@@ -226,11 +226,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
     	HAL_TIM_Base_Stop_IT(&htim2);
     	HAL_GPIO_WritePin(triac_output_GPIO_Port, triac_output_Pin, GPIO_PIN_SET);
-    	for(int i=0;i<5000;i++)
+    	for(int i=0;i<3000;i++)
     	{
 
     	}
     	HAL_GPIO_WritePin(triac_output_GPIO_Port, triac_output_Pin, GPIO_PIN_RESET);
+    	EXTI->PR=EXTI_PR_PR1;
     }
 
 
@@ -242,8 +243,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if(GPIO_Pin == GPIO_PIN_1)
     {
     	zero_cross_dedect++;
-    	EXTI->PR=EXTI_PR_PR1;
     	start_int_timer(&htim2, Veri_Matrisi[Aktif_Indeks].V_deger);
+
         // PC burda alfa counterini aktif et ve o kadar süre bekle. sonra alfa pininden pulse ver.
 
     }
@@ -264,64 +265,64 @@ int main(void)
 	///timer 14 on/off driver 1 ms 1 tick
 	memset(rx_Buffer,0,sizeof(rx_Buffer));
 	////BRUAYI UARTTA KONFIG MESAJI İLE AYARLAYACAKSIN.
-	Veri_Matrisi[0].V_Acis_Zaman=15000;
-	Veri_Matrisi[0].V_Kapanis_Zaman=5;
+	Veri_Matrisi[0].V_Acis_Zaman=5000;
+	Veri_Matrisi[0].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[0].M_deger=1000;
-	Veri_Matrisi[0].V_deger=200;
+	Veri_Matrisi[0].V_deger=320;
 	Veri_Matrisi[0].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[1].V_Acis_Zaman=15000;
-	Veri_Matrisi[1].V_Kapanis_Zaman=5;
+	Veri_Matrisi[1].V_Acis_Zaman=5000;
+	Veri_Matrisi[1].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[1].M_deger=500;
-	Veri_Matrisi[1].V_deger=200;
+	Veri_Matrisi[1].V_deger=320;
 	Veri_Matrisi[1].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[2].V_Acis_Zaman=15000;
-	Veri_Matrisi[2].V_Kapanis_Zaman=5;
+	Veri_Matrisi[2].V_Acis_Zaman=5000;
+	Veri_Matrisi[2].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[2].M_deger=250;
-	Veri_Matrisi[2].V_deger=200;
+	Veri_Matrisi[2].V_deger=280;
 	Veri_Matrisi[2].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[3].V_Acis_Zaman=15000;
-	Veri_Matrisi[3].V_Kapanis_Zaman=5;
+	Veri_Matrisi[3].V_Acis_Zaman=5000;
+	Veri_Matrisi[3].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[3].M_deger=125;
-	Veri_Matrisi[3].V_deger=200;
+	Veri_Matrisi[3].V_deger=240;
 	Veri_Matrisi[3].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[4].V_Acis_Zaman=15000;
-	Veri_Matrisi[4].V_Kapanis_Zaman=5;
+	Veri_Matrisi[4].V_Acis_Zaman=5000;
+	Veri_Matrisi[4].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[4].M_deger=100;
 	Veri_Matrisi[4].V_deger=200;
 	Veri_Matrisi[4].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[5].V_Acis_Zaman=15000;
-	Veri_Matrisi[5].V_Kapanis_Zaman=5;
+	Veri_Matrisi[5].V_Acis_Zaman=5000;
+	Veri_Matrisi[5].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[5].M_deger=75;
-	Veri_Matrisi[5].V_deger=200;
+	Veri_Matrisi[5].V_deger=160;
 	Veri_Matrisi[5].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[6].V_Acis_Zaman=15000;
-	Veri_Matrisi[6].V_Kapanis_Zaman=5;
+	Veri_Matrisi[6].V_Acis_Zaman=5000;
+	Veri_Matrisi[6].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[6].M_deger=20;
-	Veri_Matrisi[6].V_deger=200;
+	Veri_Matrisi[6].V_deger=120;
 	Veri_Matrisi[6].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[7].V_Acis_Zaman=15000;
-	Veri_Matrisi[7].V_Kapanis_Zaman=5;
+	Veri_Matrisi[7].V_Acis_Zaman=5000;
+	Veri_Matrisi[7].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[7].M_deger=10;
-	Veri_Matrisi[7].V_deger=200;
+	Veri_Matrisi[7].V_deger=80;
 	Veri_Matrisi[7].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[8].V_Acis_Zaman=15000;
-	Veri_Matrisi[8].V_Kapanis_Zaman=5;
+	Veri_Matrisi[8].V_Acis_Zaman=5000;
+	Veri_Matrisi[8].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[8].M_deger=8;
-	Veri_Matrisi[8].V_deger=200;
+	Veri_Matrisi[8].V_deger=40;
 	Veri_Matrisi[8].Aktif_Kapali=0x01;
 
-	Veri_Matrisi[9].V_Acis_Zaman=15000;
-	Veri_Matrisi[9].V_Kapanis_Zaman=5;
+	Veri_Matrisi[9].V_Acis_Zaman=5000;
+	Veri_Matrisi[9].V_Kapanis_Zaman=1000;
 	Veri_Matrisi[9].M_deger=4;
-	Veri_Matrisi[9].V_deger=200;
+	Veri_Matrisi[9].V_deger=20;
 	Veri_Matrisi[9].Aktif_Kapali=0x01;
 	////
 

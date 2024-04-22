@@ -12250,3 +12250,939 @@ arm-none-eabi-size  PWM_TEST.elf
   19264	   2084	   4220	  25568	   63e0	PWM_TEST.elf
 Finished building: default.size.stdout
  
+19:53:44 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19264	   2084	   4220	  25568	   63e0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:07:33 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19264	   2084	   4220	  25568	   63e0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:12:23 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:196:36: error: 'error_message' undeclared (first use in this function)
+  196 |         HAL_UART_Transmit(&huart2, error_message, 12, 5000);
+      |                                    ^~~~~~~~~~~~~
+../Core/Src/main.c:196:36: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:12:30 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+20:12:33 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:17:54 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+20:17:56 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:18:15 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:23:12 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:23:15 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:33:48 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:39:38 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:53:12 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+20:58:29 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19220	   2084	   4220	  25524	   63b4	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+20:58:36 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19216	   2084	   4220	  25520	   63b0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+20:58:48 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19216	   2084	   4220	  25520	   63b0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:00:46 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19216	   2084	   4220	  25520	   63b0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:00:49 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19216	   2084	   4220	  25520	   63b0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:29:40 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19216	   2084	   4220	  25520	   63b0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:31:30 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19216	   2084	   4220	  25520	   63b0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:31:46 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:32:18 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:32:22 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:36:10 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:36:36 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:36:40 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:41:24 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:41:30 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:41:33 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:55:29 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:57:05 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:57:46 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+21:57:50 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+21:59:43 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:00:41 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19224	   2084	   4220	  25528	   63b8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:02:03 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:02:10 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:03:16 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:04:52 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:05:24 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:07:16 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:09:38 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:09:41 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:16:34 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:16:38 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:18:24 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:18:26 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:20:07 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:20:10 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:24:17 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:24:24 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:26:57 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:31:41 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:31:44 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:32:30 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:32:34 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:33:09 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:33:12 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:34:06 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:34:11 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:34:14 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:36:42 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:36:49 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:38:34 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:40:14 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:40:18 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19228	   2084	   4220	  25532	   63bc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:53:17 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19256	   2084	   4220	  25560	   63d8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:53:21 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19256	   2084	   4220	  25560	   63d8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:55:05 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19256	   2084	   4220	  25560	   63d8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+22:59:00 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19256	   2084	   4220	  25560	   63d8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+22:59:03 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19256	   2084	   4220	  25560	   63d8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:03:35 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19256	   2084	   4220	  25560	   63d8	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+23:07:29 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:249:27: error: 'test_zero_cros_int_GPIO_Port' undeclared (first use in this function)
+  249 |         HAL_GPIO_WritePin(test_zero_cros_int_GPIO_Port,test_zero_cros_int_Pin,GPIO_PIN_SET);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:249:27: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:249:56: error: 'test_zero_cros_int_Pin' undeclared (first use in this function)
+  249 |         HAL_GPIO_WritePin(test_zero_cros_int_GPIO_Port,test_zero_cros_int_Pin,GPIO_PIN_SET);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:07:36 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19244	   2084	   4220	  25548	   63cc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+23:07:38 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19244	   2084	   4220	  25548	   63cc	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:10:40 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+23:10:44 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:16:26 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:20:11 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:246:27: error: 'test_zero_cros_int_GPIO_Port' undeclared (first use in this function)
+  246 |         HAL_GPIO_WritePin(test_zero_cros_int_GPIO_Port,test_zero_cros_int_Pin,GPIO_PIN_SET);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:246:27: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:246:56: error: 'test_zero_cros_int_Pin' undeclared (first use in this function)
+  246 |         HAL_GPIO_WritePin(test_zero_cros_int_GPIO_Port,test_zero_cros_int_Pin,GPIO_PIN_SET);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:676:45: error: 'test_zero_cros_int_Pin' undeclared (first use in this function)
+  676 |   HAL_GPIO_WritePin(GPIOC, triac_output_Pin|test_zero_cros_int_Pin, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:20:19 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:674:45: error: 'test_zero_cros_int_Pin' undeclared (first use in this function)
+  674 |   HAL_GPIO_WritePin(GPIOC, triac_output_Pin|test_zero_cros_int_Pin, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:674:45: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:20:22 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:674:45: error: 'test_zero_cros_int_Pin' undeclared (first use in this function)
+  674 |   HAL_GPIO_WritePin(GPIOC, triac_output_Pin|test_zero_cros_int_Pin, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:674:45: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:31:56 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:682:42: error: 'test_zero_cros_int_Pin' undeclared (first use in this function)
+  682 |   GPIO_InitStruct.Pin = triac_output_Pin|test_zero_cros_int_Pin;
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:682:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:32:05 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19212	   2084	   4220	  25516	   63ac	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+23:39:05 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19212	   2084	   4220	  25516	   63ac	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:39:10 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19212	   2084	   4220	  25516	   63ac	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:52:59 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19212	   2084	   4220	  25516	   63ac	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+23:54:59 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+23:55:59 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+00:06:52 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	   2084	   4220	  25536	   63c0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+00:07:31 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_TEST.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\alise\Desktop\STM\workspace\F0\PWM_TEST\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_TEST.elf
+ 
+arm-none-eabi-size  PWM_TEST.elf 
+arm-none-eabi-objdump -h -S PWM_TEST.elf  > "PWM_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_TEST.list
+ 
+00:07:34 **** Incremental Build of configuration Debug for project PWM_TEST ****
+make -j16 all 
+arm-none-eabi-size  PWM_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19248	   2084	   4220	  25552	   63d0	PWM_TEST.elf
+Finished building: default.size.stdout
+ 
