@@ -222,10 +222,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     		disable_triac_int();
     		stop_pwm_m();
     		on_or_off_time=0;
-    		if(test_seq==1)
-    		{
-    			Veri_Matrisi[Aktif_Indeks].V_deger=Veri_Matrisi[Aktif_Indeks].V_deger+test_v_step;
-    		}
     		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Kapanis_Zaman);
 
 

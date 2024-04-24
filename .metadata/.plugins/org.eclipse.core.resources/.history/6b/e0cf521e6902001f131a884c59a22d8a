@@ -85,13 +85,6 @@ uint8_t OK_NOK_Cevap[]= {0x00,0x00,0x00,0xf4,0x00,0x00,0x00,0x01};
 uint8_t on_or_off_time=0x01;
 
 uint32_t zero_cross_dedect=0;
-
-uint8_t  test_seq=0x0;
-uint16_t test_on_time=0;
-uint16_t test_off_time=0;
-uint32_t test_m=0;
-uint32_t test_v=0;
-uint16_t test_v_step=0;
 ////////MATRİS VERİLERİ
 
 
@@ -172,15 +165,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			  HAL_UART_Transmit(huart, OK_NOK_Cevap, 8, 5000);
 			  if(rx_Buffer[0]!=0xff) // senaryo başlat ff gelirse durdur ve sistemi 0la. diğer türlü başlat.
 			  {
-				  if(test_seq==1)
-				  {
-					  Veri_Matrisi[0].V_Acis_Zaman=test_on_time;
-					  Veri_Matrisi[0].V_Kapanis_Zaman=test_off_time;
-					  Veri_Matrisi[0].M_deger=test_m;
-					  Veri_Matrisi[0].V_deger=test_v;
-					  Veri_Matrisi[0].M_deger=test_m;
-
-				  }
 				  start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Acis_Zaman);
 				  enable_triac_int();
 				  start_pwm_m(Veri_Matrisi[Aktif_Indeks].M_deger);
@@ -222,10 +206,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     		disable_triac_int();
     		stop_pwm_m();
     		on_or_off_time=0;
-    		if(test_seq==1)
-    		{
-    			Veri_Matrisi[Aktif_Indeks].V_deger=Veri_Matrisi[Aktif_Indeks].V_deger+test_v_step;
-    		}
     		start_int_timer(&htim14, Veri_Matrisi[Aktif_Indeks].V_Kapanis_Zaman);
 
 
@@ -359,7 +339,11 @@ int main(void)
 	Veri_Matrisi[9].Aktif_Kapali=0x01;
 	////
 
-
+	uint8_t test_seq=0x0;
+	uint16_t test_on_time=0;
+	uint16_t test_off_time=0;
+	uint32_t test_m=0;
+	uint32_t test_v=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
